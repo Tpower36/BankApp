@@ -5,13 +5,10 @@
  */
 package ch.hearc.ig.odi.customeraccount.managedbeans;
 
-import java.io.Serializable;
 import java.util.Locale;
 import java.util.Map;
-import java.util.logging.Level;
 import javax.faces.context.FacesContext;
-import org.jboss.weld.annotated.enhanced.EnhancedAnnotated;
-import org.jboss.weld.bean.AbstractBean;
+
 
 /**
  *

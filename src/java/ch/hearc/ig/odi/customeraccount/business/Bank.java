@@ -29,6 +29,13 @@ public class Bank {
         accounts = new HashMap();
     }
     
+    public Map getCustomers(){
+        return customers;
+    }
+    
+    public Map getAccounts(){
+        return accounts;
+    }
     public Account getAccountByNumber(String number){
         return accounts.get(number);
     }
@@ -37,11 +44,15 @@ public class Bank {
         return customers.get(number);
     }
     
-    public void addCustomer(int number, String firstName, String lastName){
-        customers.put(number, new Customer(number, firstName, lastName));
+    public Customer addCustomer(int number, String firstName, String lastName){
+        Customer customer = new Customer(number, firstName, lastName);
+        customers.put(number, customer);
+        return customer;
     }
     
-    public void addAccount(String number, String name, double rate, Customer customer){
-        accounts.put(number, new Account(number, name, rate, customer));
+    public Account addAccount(String number, String name, double rate, Customer customer){
+        Account account = new Account(number, name, rate, customer);
+        accounts.put(number, account);
+        return account;
     }
 }
