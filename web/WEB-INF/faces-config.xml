@@ -7,15 +7,20 @@
     <application>
 
         <resource-bundle>
-            <base-name>ch.hearc.ig.odi.customeraccounts.messages</base-name>
-            <var>msg</var>
+            <base-name>
+                ch.hearc.ig.odi.customeraccounts.message
+            </base-name>
+            <var>bundle</var>
         </resource-bundle>
 
         <locale-config>
             <default-locale>en</default-locale>
             <supported-locale>fr</supported-locale>
-            <supported-locale>en</supported-locale>
         </locale-config>
     </application>
-
+    <managed-bean>
+        <managed-bean-name>localeBean</managed-bean-name>
+        <managed-bean-class>ch.hearc.ig.odi.customeraccount.managedbeans.LocaleBean</managed-bean-class>
+    
+        <managed-bean-scope>request</managed-bean-scope></managed-bean>
 </faces-config>

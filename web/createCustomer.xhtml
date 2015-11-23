@@ -7,18 +7,20 @@ and open the template in the editor.
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Create Customer</title>
+        <f:loadBundle basename="ch.hearc.ig.odi.customeraccounts.messages.Messages" var="msg" />
     </h:head>
     <h:body>
 
 
         <h:form id="form">
-            <h1><h:outputText value="Add a new customer"/></h1>
+            <h1><h:outputText value="#{msg.createcustomer}"/></h1>
 
             <p>
-                <h:outputText value="Number"/>
+                <h:outputText value="#{msg.number}"/>
                 &nbsp;
                 <h:inputText id="numberInput"
                              label="Number"
@@ -26,7 +28,7 @@ and open the template in the editor.
                              />
             </p>
             <p>
-                <h:outputText value="Firstname"/>
+                <h:outputText value="#{msg.firstname}"/>
                 &nbsp;
                 <h:inputText id="fNameInput"
                              label="Firstname"
@@ -34,7 +36,7 @@ and open the template in the editor.
                              />
             </p>
             <p>
-                <h:outputText value="Lastname"/>
+                <h:outputText value="#{msg.lastname}"/>
                 &nbsp;
                 <h:inputText id="lNameInput"
                              label="Lastname"
@@ -42,7 +44,7 @@ and open the template in the editor.
                              />
 
             </p>
-            <h:commandButton value="Submit"/>
+            <h:commandButton value="#{msg.create}"/>
         </h:form>
     </h:body>
 </html>
