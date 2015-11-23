@@ -4,8 +4,14 @@
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
 
+    <navigation-rule>
+        <from-view-id>/customerList.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>createCustomer</from-outcome>
+            <to-view-id>/createCustomer.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
     <application>
-
         <resource-bundle>
             <base-name>
                 ch.hearc.ig.odi.customeraccounts.message
@@ -21,10 +27,16 @@
     <managed-bean>
         <managed-bean-name>localeBean</managed-bean-name>
         <managed-bean-class>ch.hearc.ig.odi.customeraccount.managedbeans.LocaleBean</managed-bean-class>  
-        <managed-bean-scope>request</managed-bean-scope></managed-bean>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
     <managed-bean>
         <managed-bean-name>customerBean</managed-bean-name>
         <managed-bean-class>ch.hearc.ig.odi.customeraccount.managedbeans.CustomerBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <managed-bean-name>customerCreateBean</managed-bean-name>
+        <managed-bean-class>ch.hearc.ig.odi.customeraccount.managedbeans.CustomerCreateBean</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
 </faces-config>

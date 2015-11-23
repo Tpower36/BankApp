@@ -9,25 +9,34 @@ and open the template in the editor.
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <head>
-        <title>TODO supply a title</title>
+        <title>Customer list</title>
         <f:loadBundle basename="ch.hearc.ig.odi.customeraccounts.messages.Messages" var="msg" />
-        
+
     </head>
     <body>  
-        <h:dataTable value="#{customerBean.customers}" var="cust">
-            <h:column>
-                <f:facet name="#{msg.number}"></f:facet>
-                #{cust.number}
-            </h:column>
-            <h:column>
-                <f:facet name="#{msg.firstname}"></f:facet>
-                #{cust.firstName}
-            </h:column>
-            <h:column>
-                <f:facet name="#{msg.lastname}"></f:facet>
-                #{cust.lastName}
-            </h:column>
-        </h:dataTable>
-         <h:commandButton value="#{msg.add}"/>
+        <h:form>
+            <h:dataTable value="#{customerBean.customers}" var="cust">
+                <h:column>
+
+                    <f:facet name="header">
+                        <h:outputText value="#{msg.number}" />
+                    </f:facet>
+                    #{cust.number}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{msg.firstname}" />
+                    </f:facet>
+                    #{cust.firstName}
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="#{msg.lastname}" />
+                    </f:facet>
+                    #{cust.lastName}
+                </h:column>
+            </h:dataTable>
+            <h:commandButton action="createCustomer" value="#{msg.add}"/>
+        </h:form>
     </body>
 </html>
