@@ -5,6 +5,7 @@
  */
 package ch.hearc.ig.odi.customeraccount.managedbeans;
 
+import java.io.Serializable;
 import java.util.Locale;
 import java.util.Map;
 import javax.faces.context.FacesContext;
@@ -14,7 +15,7 @@ import javax.faces.context.FacesContext;
  *
  * @author thierry.hubmann
  */
-public class LocaleBean {
+public class LocaleBean implements Serializable{
 
     private FacesContext ctx = FacesContext.getCurrentInstance();
     private Locale locale = ctx.getViewRoot().getLocale();

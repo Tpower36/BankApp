@@ -20,7 +20,11 @@
     </application>
     <managed-bean>
         <managed-bean-name>localeBean</managed-bean-name>
-        <managed-bean-class>ch.hearc.ig.odi.customeraccount.managedbeans.LocaleBean</managed-bean-class>
-    
+        <managed-bean-class>ch.hearc.ig.odi.customeraccount.managedbeans.LocaleBean</managed-bean-class>  
         <managed-bean-scope>request</managed-bean-scope></managed-bean>
+    <managed-bean>
+        <managed-bean-name>customerBean</managed-bean-name>
+        <managed-bean-class>ch.hearc.ig.odi.customeraccount.managedbeans.CustomerBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
 </faces-config>

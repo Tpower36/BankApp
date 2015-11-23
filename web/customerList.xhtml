@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <head>
+        <title>TODO supply a title</title>
+        <f:loadBundle basename="ch.hearc.ig.odi.customeraccounts.messages.Messages" var="msg" />
+        
+    </head>
+    <body>  
+        <h:dataTable value="#{customerBean.customers}" var="cust">
+            <h:column>
+                <f:facet name="#{msg.number}"></f:facet>
+                #{cust.number}
+            </h:column>
+            <h:column>
+                <f:facet name="#{msg.firstname}"></f:facet>
+                #{cust.firstName}
+            </h:column>
+            <h:column>
+                <f:facet name="#{msg.lastname}"></f:facet>
+                #{cust.lastName}
+            </h:column>
+        </h:dataTable>
+         <h:commandButton value="#{msg.add}"/>
+    </body>
+</html>
