@@ -10,23 +10,26 @@ import ch.hearc.ig.odi.customeraccount.services.Services;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
+import javax.inject.Inject;
 
 /**
  *
  * @author thierry.hubmann
  */
+
 public class CustomerBean implements Serializable{
 
-    private List customers;
     /**
      * Creates a new instance of CustomerBean
      */
+    
+    @Inject Services services;
+    
     public CustomerBean() {
-        customers= new Services().getCustomersList();
     }
 
     public List getCustomers() {
-        return customers;
+        return services.getCustomersList();
     }
     
     
