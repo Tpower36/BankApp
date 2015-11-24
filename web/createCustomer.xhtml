@@ -25,30 +25,35 @@ and open the template in the editor.
             <p>
                 <h:outputText value="#{msg.number}"/>
                 &nbsp;
-                <h:inputText id="numberInput"
+                <h:inputText value="#{customerCreateBean.number}"
                              label="Number"
                              size="30"
+                             required="true" requiredMessage="#{msg.numrequired}"
                              />
             </p>
             <p>
                 <h:outputText value="#{msg.firstname}"/>
                 &nbsp;
-                <h:inputText id="fNameInput"
+                <h:inputText value="#{customerCreateBean.firstname}"
                              label="Firstname"
                              size="50"
+                             required="true" requiredMessage="#{msg.firstnamerequired}"
                              />
             </p>
             <p>
                 <h:outputText value="#{msg.lastname}"/>
                 &nbsp;
-                <h:inputText id="lNameInput"
+                <h:inputText value="#{customerCreateBean.lastname}"
                              label="Lastname"
                              size="50"
+                             required="true" requiredMessage="#{msg.lastnamerequired}"
                              />
 
             </p>
-            <h:commandButton value="#{msg.validate}"/>
-            <h:commandButton value="#{msg.init}"/>
+            <h:commandButton value="#{msg.validate}" type="submit" action="#{customerCreateBean.createCustomer()}"/>
+            <h:commandButton value="#{msg.init}" type="reset"/>
+            <h:messages errorStyle="color:red"/>
         </h:form>
+        <h:button value="#{msg.cancel}" outcome="customerList"/>
     </h:body>
 </html>

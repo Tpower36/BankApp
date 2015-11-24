@@ -49,5 +49,8 @@ public class CustomerCreateBean {
         this.lastname = lastname;
     }
     
+    public void createCustomer(){
+        services.saveCustomer(number, firstname, lastname);
+    }
     
 }
