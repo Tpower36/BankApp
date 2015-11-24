@@ -11,7 +11,8 @@ import java.util.List;
 import java.util.Map;
 
 /**
- *
+ * Cette classe nous permet de gérer notre banque en ajoutant des clients,
+ * des comptes et en récupérant les listes de clients et de comptes.
  * @author thierry.hubmann
  */
 public class Bank {

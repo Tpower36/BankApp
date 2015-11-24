@@ -28,6 +28,11 @@ public class CustomerBean implements Serializable{
     public CustomerBean() {
     }
 
+    /**
+     * Va utiliser l'objet service de la session pour récupérer les clients de 
+     * la banque
+     * @return la liste des clients
+     */
     public List getCustomers() {
         return services.getCustomersList();
     }

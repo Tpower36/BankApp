@@ -1,4 +1,8 @@
 package ch.hearc.ig.odi.customeraccount.business;
+/**
+ * Cette classe nous permet de gérer le compte.
+ * @author thierry.hubmann
+ */
 public class Account {
 
 	private Customer customer;
@@ -22,26 +26,26 @@ public class Account {
 	}
 
 	/**
-	 * 
-	 * @param amount
+	 * Cette méthode va créditer le compte donné en paramètre
+	 * @param amount Le montant
 	 */
 	public void credit(double amount) {
 		this.balance = balance + amount;
 	}
 
 	/**
-	 * 
-	 * @param amount
+	 * Cette méthode va débiter le compte donné en paramètre
+	 * @param amount Le montant
 	 */
 	public void debit(double amount) {
 		this.balance = balance - amount;
 	}
 
 	/**
-	 * 
-	 * @param amount
-	 * @param source
-	 * @param target
+	 * Cette méthode va permettre de transférer des fonds entre deux comptes
+	 * @param amount Le montant
+	 * @param source Le compte source
+	 * @param target Le compte de destination
 	 */
 	public static void transfert(double amount, Account source, Account target) {
 		source.debit(amount);

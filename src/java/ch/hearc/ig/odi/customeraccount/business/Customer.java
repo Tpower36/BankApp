@@ -1,7 +1,10 @@
 package ch.hearc.ig.odi.customeraccount.business;
 
 import java.util.*;
-
+/**
+ * Cette classe nous permet de gérer le client
+ * @author thierry.hubmann
+ */
 public class Customer {
 
     private List<Account> accounts;

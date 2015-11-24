@@ -15,12 +15,16 @@ and open the template in the editor.
     </head>
     <body>  
         <h:form>
+            <!--Utilisation d'un dataTable pour afficher les clients. On va
+            récupérer la liste des clients dans le CustomerBean-->
             <h:dataTable value="#{customerBean.customers}" var="cust">
                 <h:column>
 
                     <f:facet name="header">
                         <h:outputText value="#{msg.number}" />
                     </f:facet>
+                    <!--On récupère pour chaque colone l'attribut correspondant
+                    dans le client-->
                     #{cust.number}
                 </h:column>
                 <h:column>

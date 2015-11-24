@@ -25,9 +25,14 @@ and open the template in the editor.
             <p>
                 <h:outputText value="#{msg.number}"/>
                 &nbsp;
+                <!--Pour chaque input, on va aller modifier l'attibut
+                correspondant dans le customerCreateBean-->
                 <h:inputText value="#{customerCreateBean.number}"
                              label="Number"
                              size="30"
+                             <!--On vérifie ensuite que le champ est bien rempli
+                             si ce n'est pas le cas on va afficher le message
+                             spécifié dans le bundle-->
                              required="true" requiredMessage="#{msg.numrequired}"
                              />
             </p>
@@ -50,8 +55,13 @@ and open the template in the editor.
                              />
 
             </p>
+            <!--Ce bouton va envoyer le formulaire et lancer la méthode
+            createCustomer dans le createCustomerBean-->
             <h:commandButton value="#{msg.validate}" type="submit" action="#{customerCreateBean.createCustomer()}"/>
             <h:commandButton value="#{msg.init}" type="reset"/>
+            
+            <!--Ceci va permettre d'afficher tous les messages d'erreur de
+            validation après avoir cliqué sur le bouton d'envoi de formulaire.-->
             <h:messages errorStyle="color:red"/>
         </h:form>
         <h:button value="#{msg.cancel}" outcome="customerList"/>
