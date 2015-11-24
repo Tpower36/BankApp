@@ -5,17 +5,10 @@
               xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
 
     <navigation-rule>
-        <from-view-id>/customerList.xhtml</from-view-id>
-        <navigation-case>
-            <from-outcome>createCustomer</from-outcome>
-            <to-view-id>/createCustomer.xhtml</to-view-id>
-        </navigation-case>
-        
-    </navigation-rule>
-    <navigation-rule>
         <from-view-id>/createCustomer.xhtml</from-view-id>
         <navigation-case>
-            <from-outcome>#{customerCreateBean.createCustomer()}</from-outcome>
+            <from-action>#{customerCreateBean.createCustomer()}</from-action>
+            <from-outcome>0</from-outcome>
             <to-view-id>/createCustomerOk.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>

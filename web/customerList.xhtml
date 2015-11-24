@@ -36,7 +36,7 @@ and open the template in the editor.
                     #{cust.lastName}
                 </h:column>
             </h:dataTable>
-            <h:commandButton action="createCustomer" value="#{msg.add}"/>
         </h:form>
+        <h:button value="#{msg.add}" outcome="createCustomer"/>
     </body>
 </html>
