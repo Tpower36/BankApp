@@ -12,6 +12,14 @@
             <to-view-id>/createCustomerOk.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/customerList.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{customerDetailsBean.recupCustomer(cust.number)}</from-action>
+            <from-outcome>0</from-outcome>
+            <to-view-id>/customerDetails.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
     <application>
         <resource-bundle>
             <base-name>
@@ -31,13 +39,23 @@
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
     <managed-bean>
-        <managed-bean-name>customerBean</managed-bean-name>
-        <managed-bean-class>ch.hearc.ig.odi.customeraccount.managedbeans.CustomerBean</managed-bean-class>
+        <description>Cet entity bean va nous permettre de récupérer tous les utilisateurs</description>
+        <managed-bean-name>customersBean</managed-bean-name>
+        <managed-bean-class>ch.hearc.ig.odi.customeraccount.managedbeans.CustomersBean</managed-bean-class>
+    
+        <managed-bean-scope>request</managed-bean-scope></managed-bean>
+    <managed-bean>
+        <description>Cet entity bean va nous permettre de créer un nouvel utilisateur en
+        spécifiant ses attributs</description>
+        <managed-bean-name>customerCreateBean</managed-bean-name>
+        <managed-bean-class>ch.hearc.ig.odi.customeraccount.managedbeans.CustomerCreateBean</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
     <managed-bean>
-        <managed-bean-name>customerCreateBean</managed-bean-name>
-        <managed-bean-class>ch.hearc.ig.odi.customeraccount.managedbeans.CustomerCreateBean</managed-bean-class>
+        <description>Cet entity bean va contenir les informations sur le compte ainsi que 
+            la liste des comptes d'un utilisateur</description>
+        <managed-bean-name>customerDetailsBean</managed-bean-name>
+        <managed-bean-class>ch.hearc.ig.odi.customeraccount.managedbeans.CustomerDetailsBean</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
 </faces-config>

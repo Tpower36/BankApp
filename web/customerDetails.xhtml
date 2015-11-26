@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Customer details</title>
+        <f:loadBundle basename="ch.hearc.ig.odi.customeraccounts.messages.Messages" var="msg" />
+    </h:head>
+    
+    <h:body>
+        <h1>#{msg.customerdetails}</h1>
+        <h:outputText value="#{msg.number}: #{customerDetailsBean.number}" />
+        <br />
+        <h:outputText value="#{msg.firstname}: #{customerDetailsBean.firstname}" />
+        <br />
+        <h:outputText value="#{msg.lastname}: #{customerDetailsBean.lastname}" />
+        <br />
+        <h2>#{msg.customeraccounts}</h2>
+        
+        <h:form>
+           
+            <h:dataTable value="#{customerDetailsBean.accounts}" var="acc">
+                <h:column>
+
+                    <f:facet name="header">
+                        <h:outputText value="#{msg.number}" />
+                    </f:facet>
+                    #{acc.number}
+                </h:column>
+                <h:column>
+
+                    <f:facet name="header">
+                        <h:outputText value="#{msg.label}" />
+                    </f:facet>
+                    #{acc.name}
+                </h:column>
+                 <h:column>
+
+                    <f:facet name="header">
+                        <h:outputText value="#{msg.balance}" />
+                    </f:facet>
+                    #{acc.balance}
+                </h:column>
+                 <h:column>
+
+                    <f:facet name="header">
+                        <h:outputText value="#{msg.rate}" />
+                    </f:facet>
+                    #{acc.rate}
+                </h:column>
+            </h:dataTable>
+        </h:form>
+        <h:button value="#{msg.backtohome}" outcome="customerList" />
+    </h:body>
+</html>
+

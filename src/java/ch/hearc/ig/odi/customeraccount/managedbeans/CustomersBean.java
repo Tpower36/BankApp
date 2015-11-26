@@ -17,7 +17,7 @@ import javax.inject.Inject;
  * @author thierry.hubmann
  */
 
-public class CustomerBean implements Serializable{
+public class CustomersBean implements Serializable{
 
     /**
      * Creates a new instance of CustomerBean
@@ -25,7 +25,7 @@ public class CustomerBean implements Serializable{
     
     @Inject Services services;
     
-    public CustomerBean() {
+    public CustomersBean() {
     }
 
     /**

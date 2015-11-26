@@ -17,7 +17,7 @@ and open the template in the editor.
         <h:form>
             <!--Utilisation d'un dataTable pour afficher les clients. On va
             récupérer la liste des clients dans le CustomerBean-->
-            <h:dataTable value="#{customerBean.customers}" var="cust">
+            <h:dataTable value="#{customersBean.customers}" var="cust">
                 <h:column>
 
                     <f:facet name="header">
@@ -38,6 +38,11 @@ and open the template in the editor.
                         <h:outputText value="#{msg.lastname}" />
                     </f:facet>
                     #{cust.lastName}
+                </h:column>
+                <h:column>
+                    <!-- Bouton pour afficher les détails du client, on donne en
+                    paramètre le numéro du client sélectionné-->
+                    <h:commandLink value="#{msg.details}" action="#{customerDetailsBean.recupCustomer(cust.number)}"/>
                 </h:column>
             </h:dataTable>
         </h:form>
