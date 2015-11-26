@@ -18,6 +18,8 @@
         <br />
         <h:outputText value="#{msg.rate}: #{accountDetailsBean.rate}" />
         <br />
+        <!--Pas besoin de faire un commandButton car les informations du client 
+        sont encore en mémoire -->
         <h:button value="#{msg.backtocustomer}" outcome="customerDetails" />
         <h:button value="#{msg.backtohome}" outcome="customerList"/>
     </h:body>

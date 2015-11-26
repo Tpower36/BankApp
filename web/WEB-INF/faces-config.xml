@@ -31,6 +31,15 @@
            <redirect />
         </navigation-case>
     </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/createAccount.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{accountCreateBean.createAccount()}</from-action>
+            <from-outcome>0</from-outcome>
+            <to-view-id>/createAccountOk.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
     <application>
         <resource-bundle>
             <base-name>

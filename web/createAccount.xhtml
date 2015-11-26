@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Create Account</title>
+        <f:loadBundle basename="ch.hearc.ig.odi.customeraccounts.messages.Messages" var="msg" />
+    </h:head>
+    <h:body>
+
+        <h:form id="form">
+            <h1><h:outputText value="#{msg.createaccount}"/></h1>
+
+            <p>
+                <h:outputText value="#{msg.number}"/>
+                &nbsp;
+                <h:inputText value="#{accountCreateBean.number}"
+                             label="Number"
+                             size="30"                           
+                             required="true" requiredMessage="#{msg.numrequired}"
+                             />
+
+            </p>
+            <p>
+                <h:outputText value="#{msg.label}"/>
+                &nbsp;
+                <h:inputText value="#{accountCreateBean.name}"
+                             label="Firstname"
+                             size="50"
+                             required="true" requiredMessage="#{msg.labelrequired}"
+                             />
+            </p>
+            <p>
+                <h:outputText value="#{msg.rate}"/>
+                &nbsp;
+                <h:inputText value="#{accountCreateBean.rate}"
+                             label="Lastname"
+                             size="50"
+                             required="true" requiredMessage="#{msg.raterequired}"
+                             />
+
+            </p>
+            <h:commandButton value="#{msg.validate}" type="submit" action="#{accountCreateBean.createAccount()}"/>
+            <h:commandButton value="#{msg.init}" type="reset"/>
+
+            <!--Ceci va permettre d'afficher tous les messages d'erreur de
+            validation après avoir cliqué sur le bouton d'envoi de formulaire.-->
+            <h:messages errorStyle="color:red"/>
+        </h:form>
+        <h:button value="#{msg.cancel}" outcome="customerDetails"/>
+    </h:body>
+</html>
+

@@ -8,11 +8,9 @@
         <f:loadBundle basename="ch.hearc.ig.odi.customeraccounts.messages.Messages" var="msg" />
     </h:head>
     <h:body>
-        <!--Cette page va simplement afficher un message à l'utilisateur pour 
-        lui confirmer que le client à bien été ajouté-->
         <h1>#{msg.success}</h1>
         <p>#{msg.accountadded}</p>
-        <h:link value="Retour à la page d'accueil" outcome="customerList" />
+        <h:link value="#{msg.backtocustomer}" outcome="customerDetails" />
     </h:body>
 </html>
 

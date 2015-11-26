@@ -31,6 +31,17 @@ public class CustomerCreateBean {
     public CustomerCreateBean() {
     }
 
+    /**
+     * Cette méthode sera appelée après la validation des données. Elle va
+     * appeler la méthode de sauvegarde de client dans la classe services.
+     *
+     * @return un code d'erreur, 0 si tout s'est bien déroulé
+     */
+    public int createCustomer() {
+        services.saveCustomer(number, firstname, lastname);
+        return 0;
+    }
+    
     public int getNumber() {
         return number;
     }
@@ -55,15 +66,6 @@ public class CustomerCreateBean {
         this.lastname = lastname;
     }
 
-    /**
-     * Cette méthode sera appelée après la validation des données. Elle va
-     * appeler la méthode de sauvegarde de client dans la classe services.
-     *
-     * @return un code d'erreur, 0 si tout s'est bien déroulé
-     */
-    public int createCustomer() {
-        services.saveCustomer(number, firstname, lastname);
-        return 0;
-    }
+    
 
 }

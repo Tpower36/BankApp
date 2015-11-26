@@ -55,6 +55,7 @@
                     <h:commandLink value="#{msg.details}" action="#{accountDetailsBean.recupAccount(acc.number)}"/>
                 </h:column>
             </h:dataTable>
+            <h:button value="#{msg.addaccount}" outcome="createAccount"/>
         </h:form>
         <h:button value="#{msg.backtohome}" outcome="customerList" />
     </h:body>

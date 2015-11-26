@@ -43,6 +43,17 @@ public class Services implements Serializable{
     public void saveCustomer(Integer number, String fn, String ln){
         bank.addCustomer(number, fn, ln);
     }
+    
+    /**
+     * Dit à la banque de créer un nouveau compte
+     * @param number le numéro du compte
+     * @param name le nom du compte
+     * @param rate le taux
+     * @param customer le client auquel appartient le compte
+     */
+    public void saveAccount(String number, String name, double rate, Customer customer){
+        bank.addAccount(number, name, rate, customer);
+    }
 
     /**
      * Retourne le client de la banque qui correspond au numéro passé en paramètre.
@@ -54,8 +65,8 @@ public class Services implements Serializable{
     }
     
     /**
-     * Retourne une Map contenant tous les clients de la banqe
-     * @return Une Map contenant tous les clients de la banqe
+     * Retourne une Map contenant tous les clients de la banque
+     * @return Une Map contenant tous les clients de la banque
      */
     public Map<Integer, Customer> getCustomers(){
         return bank.getCustomers();
