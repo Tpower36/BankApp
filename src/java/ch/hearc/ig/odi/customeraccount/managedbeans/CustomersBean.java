@@ -5,11 +5,9 @@
  */
 package ch.hearc.ig.odi.customeraccount.managedbeans;
 
-import ch.hearc.ig.odi.customeraccount.business.Bank;
 import ch.hearc.ig.odi.customeraccount.services.Services;
 import java.io.Serializable;
 import java.util.List;
-import java.util.Map;
 import javax.inject.Inject;
 import javax.inject.Named;
 

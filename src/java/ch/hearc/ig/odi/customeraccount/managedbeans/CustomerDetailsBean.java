@@ -7,16 +7,21 @@ package ch.hearc.ig.odi.customeraccount.managedbeans;
 
 import ch.hearc.ig.odi.customeraccount.business.Customer;
 import ch.hearc.ig.odi.customeraccount.services.Services;
+import java.io.Serializable;
 import java.util.List;
+import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
 /**
+ * Il faut annoter cette classe avec SessionScoped car l'objet doit rester en
+ * mémoire même après une redirection.
  *
  * @author thierry.hubmann
  */
+@SessionScoped
 @Named(value = "customerDetailsBean")
-public class CustomerDetailsBean {
+public class CustomerDetailsBean implements Serializable {
 
     @Inject
     Services services;
@@ -60,9 +65,9 @@ public class CustomerDetailsBean {
         return accounts;
     }
 
-    
     /**
      * Cette méthode récupère le client grâce à son numéro
+     *
      * @param number le numéro du client
      * @return 0 si le client à été récupéré
      */
@@ -77,5 +82,9 @@ public class CustomerDetailsBean {
         } else {
             return 1;
         }
+    }
+
+    public int test() {
+        return 0;
     }
 }

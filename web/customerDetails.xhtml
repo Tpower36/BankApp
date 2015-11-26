@@ -10,6 +10,7 @@
     
     <h:body>
         <h1>#{msg.customerdetails}</h1>
+        
         <h:outputText value="#{msg.number}: #{customerDetailsBean.number}" />
         <br />
         <h:outputText value="#{msg.firstname}: #{customerDetailsBean.firstname}" />
@@ -48,6 +49,10 @@
                         <h:outputText value="#{msg.rate}" />
                     </f:facet>
                     #{acc.rate}
+                </h:column>
+                <h:column>
+                    <!-- Lien pour afficher les détails du compte-->
+                    <h:commandLink value="#{msg.details}" action="#{accountDetailsBean.recupAccount(acc.number)}"/>
                 </h:column>
             </h:dataTable>
         </h:form>

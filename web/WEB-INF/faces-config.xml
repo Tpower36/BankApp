@@ -10,6 +10,7 @@
             <from-action>#{customerCreateBean.createCustomer()}</from-action>
             <from-outcome>0</from-outcome>
             <to-view-id>/createCustomerOk.xhtml</to-view-id>
+            <redirect />
         </navigation-case>
     </navigation-rule>
     <navigation-rule>
@@ -18,6 +19,16 @@
             <from-action>#{customerDetailsBean.recupCustomer(cust.number)}</from-action>
             <from-outcome>0</from-outcome>
             <to-view-id>/customerDetails.xhtml</to-view-id>
+            <redirect />
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/customerDetails.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{accountDetailsBean.recupAccount(acc.number)}</from-action>
+            <from-outcome>0</from-outcome>
+            <to-view-id>/accountDetails.xhtml</to-view-id>
+           <redirect />
         </navigation-case>
     </navigation-rule>
     <application>
@@ -39,23 +50,35 @@
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
     <managed-bean>
-        <description>Cet entity bean va nous permettre de récupérer tous les utilisateurs</description>
+        <description>Ce bean va nous permettre de récupérer tous les utilisateurs</description>
         <managed-bean-name>customersBean</managed-bean-name>
         <managed-bean-class>ch.hearc.ig.odi.customeraccount.managedbeans.CustomersBean</managed-bean-class>
     
         <managed-bean-scope>request</managed-bean-scope></managed-bean>
     <managed-bean>
-        <description>Cet entity bean va nous permettre de créer un nouvel utilisateur en
+        <description>Ce bean va nous permettre de créer un nouvel utilisateur en
         spécifiant ses attributs</description>
         <managed-bean-name>customerCreateBean</managed-bean-name>
         <managed-bean-class>ch.hearc.ig.odi.customeraccount.managedbeans.CustomerCreateBean</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
     <managed-bean>
-        <description>Cet entity bean va contenir les informations sur le compte ainsi que 
+        <description>Ce bean va contenir les informations sur le client ainsi que 
             la liste des comptes d'un utilisateur</description>
         <managed-bean-name>customerDetailsBean</managed-bean-name>
         <managed-bean-class>ch.hearc.ig.odi.customeraccount.managedbeans.CustomerDetailsBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <description>Ce bean va nous permettre d'ajouter un compte</description>
+        <managed-bean-name>accountCreateBean</managed-bean-name>
+        <managed-bean-class>ch.hearc.ig.odi.customeraccount.managedbeans.AccountCreateBean</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+        <description>Ce bean va nous permettre d'afficher les détails d'un compte</description>
+        <managed-bean-name>accountDetailsBean</managed-bean-name>
+        <managed-bean-class>ch.hearc.ig.odi.customeraccount.managedbeans.AccountDetailsBean</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
 </faces-config>

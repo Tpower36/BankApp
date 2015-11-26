@@ -1,5 +1,6 @@
 package ch.hearc.ig.odi.customeraccount.services;
 
+import ch.hearc.ig.odi.customeraccount.business.Account;
 import ch.hearc.ig.odi.customeraccount.business.Bank;
 import ch.hearc.ig.odi.customeraccount.business.Customer;
 import java.io.Serializable;
@@ -67,5 +68,14 @@ public class Services implements Serializable{
      */
     public List<Customer> getCustomersList(){
         return new ArrayList(getCustomers().values());
+    }
+    
+    /**
+     * Retourne un Account lorsqu'on spécifie un numéro valable
+     * @param number le numéro du compte
+     * @return l'account recherché
+     */
+    public Account getAccountByNumber(String number){
+        return bank.getAccountByNumber(number);
     }
 }
