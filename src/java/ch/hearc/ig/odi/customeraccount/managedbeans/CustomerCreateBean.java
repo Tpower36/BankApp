@@ -7,6 +7,7 @@ package ch.hearc.ig.odi.customeraccount.managedbeans;
 
 import ch.hearc.ig.odi.customeraccount.services.Services;
 import javax.inject.Inject;
+import javax.inject.Named;
 
 /**
  * Ce managed bean va permettre d'ajouter des clients en spécifiant le numéro le
@@ -14,6 +15,7 @@ import javax.inject.Inject;
  *
  * @author thierry.hubmann
  */
+@Named(value = "@customerCreateBean")
 public class CustomerCreateBean {
 
     @Inject

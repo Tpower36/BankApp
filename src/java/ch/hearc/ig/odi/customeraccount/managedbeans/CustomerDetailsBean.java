@@ -9,11 +9,13 @@ import ch.hearc.ig.odi.customeraccount.business.Customer;
 import ch.hearc.ig.odi.customeraccount.services.Services;
 import java.util.List;
 import javax.inject.Inject;
+import javax.inject.Named;
 
 /**
  *
  * @author thierry.hubmann
  */
+@Named(value = "customerDetailsBean")
 public class CustomerDetailsBean {
 
     @Inject

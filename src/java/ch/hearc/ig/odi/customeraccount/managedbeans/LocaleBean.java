@@ -9,12 +9,14 @@ import java.io.Serializable;
 import java.util.Locale;
 import java.util.Map;
 import javax.faces.context.FacesContext;
+import javax.inject.Named;
 
 
 /**
  *
  * @author thierry.hubmann
  */
+@Named(value = "localeBean")
 public class LocaleBean implements Serializable{
 
     private FacesContext ctx = FacesContext.getCurrentInstance();

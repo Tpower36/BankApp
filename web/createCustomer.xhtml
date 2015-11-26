@@ -29,12 +29,12 @@ and open the template in the editor.
                 correspondant dans le customerCreateBean-->
                 <h:inputText value="#{customerCreateBean.number}"
                              label="Number"
-                             size="30"
+                             size="30"                           
+                             required="true" requiredMessage="#{msg.numrequired}"
+                             />
                              <!--On vérifie ensuite que le champ est bien rempli
                              si ce n'est pas le cas on va afficher le message
                              spécifié dans le bundle-->
-                             required="true" requiredMessage="#{msg.numrequired}"
-                             />
             </p>
             <p>
                 <h:outputText value="#{msg.firstname}"/>

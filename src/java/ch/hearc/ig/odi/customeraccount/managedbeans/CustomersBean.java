@@ -11,12 +11,13 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 import javax.inject.Inject;
+import javax.inject.Named;
 
 /**
  *
  * @author thierry.hubmann
  */
-
+@Named(value = "customersBean")
 public class CustomersBean implements Serializable{
 
     /**
