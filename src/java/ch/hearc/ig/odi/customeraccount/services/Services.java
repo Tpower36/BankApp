@@ -1,6 +1,5 @@
 package ch.hearc.ig.odi.customeraccount.services;
 
-import ch.hearc.ig.odi.customeraccount.business.Account;
 import ch.hearc.ig.odi.customeraccount.business.Bank;
 import ch.hearc.ig.odi.customeraccount.business.Customer;
 import java.io.Serializable;

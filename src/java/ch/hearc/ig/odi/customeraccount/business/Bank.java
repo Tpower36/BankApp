@@ -54,6 +54,7 @@ public class Bank {
     public Account addAccount(String number, String name, double rate, Customer customer){
         Account account = new Account(number, name, rate, customer);
         accounts.put(number, account);
+        customer.addAccount(account);
         return account;
     }
 }

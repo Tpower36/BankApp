@@ -46,15 +46,8 @@ public class Customer {
         return account;
     }
 
-    /**
-     *
-     * @param number
-     * @param name
-     * @param rate
-     */
-    public void addAccount(String number, String name, double rate) {
-        Account newAccount = new Account(number, name, rate, this);
-        accounts.add(newAccount);
+    public void addAccount(Account account) {
+        accounts.add(account);
     }
 
     public List<Account> getAccounts() {
@@ -89,6 +82,4 @@ public class Customer {
         this.lastName = lastName;
     }
     
-    
-
 }
