@@ -16,7 +16,6 @@ import javax.inject.Inject;
  *
  * @author thierry.hubmann
  */
-@Stateful
 @Named(value = "accountCreateBean")
 public class AccountCreateBean {
 
