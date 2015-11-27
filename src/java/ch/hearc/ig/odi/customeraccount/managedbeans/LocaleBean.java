@@ -8,6 +8,7 @@ package ch.hearc.ig.odi.customeraccount.managedbeans;
 import java.io.Serializable;
 import java.util.Locale;
 import java.util.Map;
+import javax.ejb.Stateful;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
@@ -16,6 +17,7 @@ import javax.inject.Named;
  *
  * @author thierry.hubmann
  */
+@Stateful
 @Named(value = "localeBean")
 public class LocaleBean implements Serializable{
 

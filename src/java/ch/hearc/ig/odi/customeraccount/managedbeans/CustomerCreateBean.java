@@ -6,6 +6,7 @@
 package ch.hearc.ig.odi.customeraccount.managedbeans;
 
 import ch.hearc.ig.odi.customeraccount.services.Services;
+import javax.ejb.Stateful;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -15,6 +16,7 @@ import javax.inject.Named;
  *
  * @author thierry.hubmann
  */
+@Stateful
 @Named(value = "@customerCreateBean")
 public class CustomerCreateBean {
 

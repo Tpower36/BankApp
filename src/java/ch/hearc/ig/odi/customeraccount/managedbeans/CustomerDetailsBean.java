@@ -9,6 +9,7 @@ import ch.hearc.ig.odi.customeraccount.business.Customer;
 import ch.hearc.ig.odi.customeraccount.services.Services;
 import java.io.Serializable;
 import java.util.List;
+import javax.ejb.Stateful;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -19,6 +20,7 @@ import javax.inject.Named;
  *
  * @author thierry.hubmann
  */
+@Stateful
 @SessionScoped
 @Named(value = "customerDetailsBean")
 public class CustomerDetailsBean implements Serializable {

@@ -5,12 +5,14 @@
  */
 package ch.hearc.ig.odi.customeraccount.tools;
 
+import javax.ejb.Stateless;
 import javax.faces.context.FacesContext;
 
 /**
  *
  * @author thierry.hubmann
  */
+@Stateless
 public class JsfTools {
     public static <T> T findBean(String managedBeanName, Class<T> beanClass){
         FacesContext context = FacesContext.getCurrentInstance();

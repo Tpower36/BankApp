@@ -8,6 +8,7 @@ package ch.hearc.ig.odi.customeraccount.managedbeans;
 import ch.hearc.ig.odi.customeraccount.business.Account;
 import ch.hearc.ig.odi.customeraccount.services.Services;
 import java.io.Serializable;
+import javax.ejb.Stateful;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
@@ -17,6 +18,7 @@ import javax.inject.Inject;
  * mémoire même après une redirection.
  * @author thierry.hubmann
  */
+@Stateful
 @SessionScoped
 @Named(value = "accountDetailsBean")
 public class AccountDetailsBean implements Serializable{
