@@ -43,7 +43,7 @@
     <application>
         <resource-bundle>
             <base-name>
-                ch.hearc.ig.odi.customeraccounts.message
+                ch.hearc.ig.odi.customeraccount.message
             </base-name>
             <var>bundle</var>
         </resource-bundle>
