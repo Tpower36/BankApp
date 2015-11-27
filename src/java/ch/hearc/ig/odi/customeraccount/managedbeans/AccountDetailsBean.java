@@ -18,6 +18,7 @@ import javax.inject.Inject;
  * mémoire même après une redirection.
  * @author thierry.hubmann
  */
+
 @Stateful
 @SessionScoped
 @Named(value = "accountDetailsBean")

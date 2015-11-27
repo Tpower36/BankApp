@@ -8,7 +8,6 @@ package ch.hearc.ig.odi.customeraccount.managedbeans;
 import ch.hearc.ig.odi.customeraccount.business.Customer;
 import ch.hearc.ig.odi.customeraccount.services.Services;
 import ch.hearc.ig.odi.customeraccount.tools.JsfTools;
-import javax.ejb.Stateful;
 import javax.inject.Named;
 import javax.inject.Inject;
 

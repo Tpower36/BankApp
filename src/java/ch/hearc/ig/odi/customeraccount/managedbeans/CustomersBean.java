@@ -8,7 +8,7 @@ package ch.hearc.ig.odi.customeraccount.managedbeans;
 import ch.hearc.ig.odi.customeraccount.services.Services;
 import java.io.Serializable;
 import java.util.List;
-import javax.ejb.Stateful;
+import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -16,7 +16,7 @@ import javax.inject.Named;
  *
  * @author thierry.hubmann
  */
-@Stateful
+@Stateless
 @Named(value = "customersBean")
 public class CustomersBean implements Serializable{
 
