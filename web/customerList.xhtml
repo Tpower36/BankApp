@@ -42,7 +42,7 @@ and open the template in the editor.
                 <h:column>
                     <!-- Bouton pour afficher les détails du client, on donne en
                     paramètre le numéro du client sélectionné-->
-                    <h:commandLink value="#{msg.details}" action="#{customerDetailsBean.recupCustomer(cust.number)}"/>
+                    <h:commandLink value="#{msg.details}" action="#{customerDetailsBean.recupCustomer(cust)}"/>
                 </h:column>
             </h:dataTable>
         </h:form>

@@ -19,18 +19,13 @@ import javax.inject.Inject;
  * @author thierry.hubmann
  */
 
-@Stateful
 @SessionScoped
 @Named(value = "accountDetailsBean")
 public class AccountDetailsBean implements Serializable{
     @Inject
     Services services;
     
-        private String number;
-	private String name;
-	private double balance;
-	private double rate;
-        private int customerNumber;
+    private Account account;
 
     /**
      * Creates a new instance of AccountDetailsBean
@@ -38,48 +33,27 @@ public class AccountDetailsBean implements Serializable{
     public AccountDetailsBean() {
     }
 
-    public String getNumber() {
-        return number;
+    public Account getAccount() {
+        return account;
     }
 
-    public void setNumber(String number) {
-        this.number = number;
+    public void setAccount(Account account) {
+        this.account = account;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public double getBalance() {
-        return balance;
-    }
-
-    public void setBalance(double balance) {
-        this.balance = balance;
-    }
-
-    public double getRate() {
-        return rate;
-    }
-
-    public void setRate(double rate) {
-        this.rate = rate;
-    }
     
-    public int test(){
-        return 0;
-    }
-    public int recupAccount(String number) {
-        this.number = number;
-        Account account = services.getAccountByNumber(number);
-        this.name = account.getName();
-        this.balance = account.getBalance();
-        this.rate = account.getRate();
-        
-        return 0;
+    /**
+     * Récupère le compte à afficher en détails
+     * @param account
+     * @return 
+     */
+    public int recupAccount(Account account) {
+        if(account != null){
+            this.account = account;
+            return 0;
+        }else{
+            this.account = null;
+            return 1;
+        }
     }
 }

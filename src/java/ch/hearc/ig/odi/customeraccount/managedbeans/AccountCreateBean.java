@@ -34,7 +34,7 @@ public class AccountCreateBean {
 
      public int createAccount(){
         CustomerDetailsBean customerBean = JsfTools.findBean("customerDetailsBean", CustomerDetailsBean.class);
-        Customer customer = services.getCustomer(customerBean.getNumber());
+        Customer customer = customerBean.getCustomer();
         services.saveAccount(number, name, rate, customer);
         return 0;
     }

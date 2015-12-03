@@ -11,17 +11,17 @@
     <h:body>
         <h1>#{msg.customerdetails}</h1>
         
-        <h:outputText value="#{msg.number}: #{customerDetailsBean.number}" />
+        <h:outputText value="#{msg.number}: #{customerDetailsBean.customer.number}" />
         <br />
-        <h:outputText value="#{msg.firstname}: #{customerDetailsBean.firstname}" />
+        <h:outputText value="#{msg.firstname}: #{customerDetailsBean.customer.firstName}" />
         <br />
-        <h:outputText value="#{msg.lastname}: #{customerDetailsBean.lastname}" />
+        <h:outputText value="#{msg.lastname}: #{customerDetailsBean.customer.lastName}" />
         <br />
         <h2>#{msg.customeraccounts}</h2>
         
         <h:form>
            
-            <h:dataTable value="#{customerDetailsBean.accounts}" var="acc">
+            <h:dataTable value="#{customerDetailsBean.customer.accounts}" var="acc">
                 <h:column>
 
                     <f:facet name="header">
@@ -52,7 +52,7 @@
                 </h:column>
                 <h:column>
                     <!-- Lien pour afficher les détails du compte-->
-                    <h:commandLink value="#{msg.details}" action="#{accountDetailsBean.recupAccount(acc.number)}"/>
+                    <h:commandLink value="#{msg.details}" action="#{accountDetailsBean.recupAccount(acc)}"/>
                 </h:column>
             </h:dataTable>
             <h:button value="#{msg.addaccount}" outcome="createAccount"/>

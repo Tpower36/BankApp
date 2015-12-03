@@ -5,11 +5,12 @@
  */
 package ch.hearc.ig.odi.customeraccount.managedbeans;
 
+import ch.hearc.ig.odi.customeraccount.business.Account;
 import ch.hearc.ig.odi.customeraccount.business.Customer;
 import ch.hearc.ig.odi.customeraccount.services.Services;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
-import javax.ejb.Stateful;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -20,7 +21,6 @@ import javax.inject.Named;
  *
  * @author thierry.hubmann
  */
-@Stateful
 @SessionScoped
 @Named(value = "customerDetailsBean")
 public class CustomerDetailsBean implements Serializable {
@@ -28,10 +28,7 @@ public class CustomerDetailsBean implements Serializable {
     @Inject
     Services services;
 
-    private int number;
-    private String firstname;
-    private String lastname;
-    private List accounts;
+    private Customer customer;
 
     /**
      * Creates a new instance of CustomerDetailsBean
@@ -39,54 +36,28 @@ public class CustomerDetailsBean implements Serializable {
     public CustomerDetailsBean() {
     }
 
-    public int getNumber() {
-        return number;
+    public Customer getCustomer() {
+        return customer;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
-
-    public String getFirstname() {
-        return firstname;
-    }
-
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
-    }
-
-    public String getLastname() {
-        return lastname;
-    }
-
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
-    }
-
-    public List getAccounts() {
-        return accounts;
-    }
+    
 
     /**
-     * Cette méthode récupère le client grâce à son numéro
+     * Cette méthode récupère le client
      *
-     * @param number le numéro du client
+     * @param cust le client
      * @return 0 si le client à été récupéré
      */
-    public int recupCustomer(int number) {
-        this.number = number;
-        Customer customer = services.getCustomer(number);
-        this.firstname = customer.getFirstName();
-        this.lastname = customer.getLastName();
-        this.accounts = customer.getAccounts();
-        if (number > 0) {
+    public int recupCustomer(Customer cust) {
+        if (cust != null) {
+            customer = cust;
             return 0;
         } else {
+            customer = null;
             return 1;
         }
-    }
-
-    public int test() {
-        return 0;
     }
 }

@@ -8,7 +8,7 @@ package ch.hearc.ig.odi.customeraccount.managedbeans;
 import ch.hearc.ig.odi.customeraccount.services.Services;
 import java.io.Serializable;
 import java.util.List;
-import javax.ejb.Stateless;
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
@@ -16,8 +16,8 @@ import javax.inject.Named;
  *
  * @author thierry.hubmann
  */
-@Stateless
 @Named(value = "customersBean")
+@RequestScoped
 public class CustomersBean implements Serializable{
 
     /**

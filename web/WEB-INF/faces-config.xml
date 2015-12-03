@@ -16,7 +16,7 @@
     <navigation-rule>
         <from-view-id>/customerList.xhtml</from-view-id>
         <navigation-case>
-            <from-action>#{customerDetailsBean.recupCustomer(cust.number)}</from-action>
+            <from-action>#{customerDetailsBean.recupCustomer(cust)}</from-action>
             <from-outcome>0</from-outcome>
             <to-view-id>/customerDetails.xhtml</to-view-id>
             <redirect />
@@ -25,10 +25,19 @@
     <navigation-rule>
         <from-view-id>/customerDetails.xhtml</from-view-id>
         <navigation-case>
-            <from-action>#{accountDetailsBean.recupAccount(acc.number)}</from-action>
+            <from-action>#{accountDetailsBean.recupAccount(acc)}</from-action>
             <from-outcome>0</from-outcome>
             <to-view-id>/accountDetails.xhtml</to-view-id>
            <redirect />
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/accountDetails.xhtml</from-view-id>
+        <navigation-case>
+            <from-action>#{customerDetailsBean.recupCustomer(accountDetailsBean.account.customer)}</from-action>
+            <from-outcome>0</from-outcome>
+            <to-view-id>/customerDetails.xhtml</to-view-id>
+            <redirect />
         </navigation-case>
     </navigation-rule>
     <navigation-rule>
@@ -53,11 +62,6 @@
             <supported-locale>fr</supported-locale>
         </locale-config>
     </application>
-    <managed-bean>
-        <managed-bean-name>localeBean</managed-bean-name>
-        <managed-bean-class>ch.hearc.ig.odi.customeraccount.managedbeans.LocaleBean</managed-bean-class>  
-        <managed-bean-scope>request</managed-bean-scope>
-    </managed-bean>
     <managed-bean>
         <description>Ce bean va nous permettre de récupérer tous les utilisateurs</description>
         <managed-bean-name>customersBean</managed-bean-name>

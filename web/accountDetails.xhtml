@@ -10,18 +10,19 @@
     <h:body>
         <h1>#{msg.accountdetails}</h1>
         
-        <h:outputText value="#{msg.number}: #{accountDetailsBean.number}" />
+        <h:outputText value="#{msg.number}: #{accountDetailsBean.account.number}" />
         <br />
-        <h:outputText value="#{msg.label}: #{accountDetailsBean.name}" />
+        <h:outputText value="#{msg.label}: #{accountDetailsBean.account.name}" />
         <br />
-        <h:outputText value="#{msg.balance}: #{accountDetailsBean.balance}" />
+        <h:outputText value="#{msg.balance}: #{accountDetailsBean.account.balance}" />
         <br />
-        <h:outputText value="#{msg.rate}: #{accountDetailsBean.rate}" />
+        <h:outputText value="#{msg.rate}: #{accountDetailsBean.account.rate}" />
         <br />
-        <!--Pas besoin de faire un commandButton car les informations du client 
-        sont encore en mémoire -->
-        <h:button value="#{msg.backtocustomer}" outcome="customerDetails" />
+        
+        <h:form>
+        <h:commandButton value="#{msg.backtocustomer}" action="#{customerDetailsBean.recupCustomer(accountDetailsBean.account.customer)}" />
         <h:button value="#{msg.backtohome}" outcome="customerList"/>
+        </h:form>
     </h:body>
 </html>
 
